@@ -7,37 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link rel="stylesheet" typ="text/css" href="{% static 'css\adminC.css' %}">
-    <link rel="stylesheet" typ="text/css" href="{% static 'css\utilsA.css' %}">
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\adminF.css' %}">
+    
     <title>Admin View</title>
 </head>
 <body>
-  <div class="sidemenu">
-    <div class="brandmenu">
-        <b><h1><a href="{% url 'home' %}">McQueen's</h1></a></b>
-    </div>
-    <div class="nav">
-        <br><br><br><br><br><br><br>
-        <div class="img-case brandmenu">
-            <p>
-            <a href="">
-            <img src="{% static "images/user.png" %}" width="100px" height="100px" alt="">
-            </a>
-        </p>
-        </div>
-        <div class="user brandmenu"><b>ADMIN</b></div>
-    </div>
-<div class="brandmenu">
-    <a href="{% url 'login' %}">LOG OUT</a>
-</div>
-</div>
-  <div class="container">
-    <div class="header">
-      <div class="user">
-        <h1>ADMIN PANEL</h1>
+  <div class="container ">
+    <div class="header  flex ">
+      <div>
+        <h3>
+        <a href="{% url 'adminview' %}">BACK</a>
+      </h3>
       </div>
-  </div>
-  <br><br><br><br>
+        <div class="logo container2 ">
+            <h1>McQueen's <span>Rentals</span>
+              
+            </h1>
+        </div>
+        <div class="logout ">
+          
+            <nav>
+                <h3><a href="{% url 'logout' %}">LOG OUT</a></h3>
+            </nav>
+        
+        </div>
+    </div>
   <div class="tablecrud">
     <div class="crud">
       <table>

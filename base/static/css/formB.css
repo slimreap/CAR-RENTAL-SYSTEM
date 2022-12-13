@@ -186,7 +186,7 @@ form .input-box span.details{
    }
 
 /*media*/
- @media(max-width: 584px){
+ @media(max-width: 1125px){
  .container{
   max-width: 100%;
 }
@@ -205,7 +205,7 @@ form .user-details .input-box{
     width: 5px;
   }
   }
-  @media(max-width: 459px){
+  @media(max-width: 655px){
   .container .content .category{
     flex-direction: column;
   }

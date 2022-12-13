@@ -176,12 +176,12 @@ td {
   }  
 
 @media screen and (max-width: 1050px) {
-    .container {
+    .container li {
         font-size: 18px;
     }
 }
 
-@media screen and (max-width: 735px) {
+@media screen and (max-width: 560px) {
     .container li span {
         display: none;
     }

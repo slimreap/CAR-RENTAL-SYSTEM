@@ -263,7 +263,7 @@ img {
 
 /* Mobile */
 
-@media(max-width:500px){
+@media(max-width:655px){
   .navbar{
     height: 130px;
   }

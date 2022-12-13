@@ -6,41 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link rel="stylesheet" typ="text/css" href="{% static 'css\adminA.css' %}">
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\adminZ.css' %}">
     
-    <link rel="stylesheet" typ="text/css" href="{% static 'css\utilsB.css' %}">
+    
     <title>Admin View</title>
 </head>
+
+
 <body>
-  <div class="sidemenu">
-    <div class="brandmenu admin logoadmin">
-      <b><h2>McQueen's</h2></b>
-  </div>
-  <div class="nav">
-      <br><br><br><br><br>
-      <div class="img-case brandmenu">
-          <p>
-          <a href="">
-          <img src="{% static "images/logo.png" %}" width="100px" height="100px" alt="">
-          </a>
-      </p>
+
+  
+  <div class="container ">
+    <div class="header  flex ">
+      <div>
+        <h3>
+        <a href="{% url 'adminview' %}">BACK</a>
+      </h3>
       </div>
-      <br><br><br><br>
-      <h3><div class="user  admin"><b>ADMIN</b>
-      </div>
-  </div>
-  <br> <br> <br> <br> <br> <br> <br> 
-<div class="brandmenu  admin">
-  <h3><a href="{% url 'logout' %}">LOG OUT</a></h3>
-</div>
-</div>
-<div class="container">
-  <div class="header">
-          <div class="user">
-             <h1>ADMIN PANEL</h1>
-          </div>
-  </div>
+        <div class="logo container2 ">
+            <h1>McQueen's <span>Rentals</span>
+              
+            </h1>
+        </div>
+        <div class="logout ">
+          
+            <nav>
+                <h3><a href="{% url 'logout' %}">LOG OUT</a></h3>
+            </nav>
+        
+        </div>
+    </div>
   <br><br><br><br>
   <div class="tablecrud">
     <div class="crud">
@@ -50,6 +47,7 @@
 
     {% csrf_token %} 
     <tr>
+      <br><br>
       <th><label for="name">Name</label></th>
     <td><input type="text" value = "{{customer.Name}}" id = "name" name="Name"/></td>
     </tr>
@@ -118,10 +116,10 @@
               <td><input type = "date" value = "{{booking.Drop_Off}}" id = "drop_off" name = "Drop_Off"></td>
               </tr>
               <tr>
-              <td><input type="submit" class="btn btn-outline" value="SUBMIT"> </td>
+              <td><input href="{% url 'adminview' %}" type="submit" class="btn" value="SUBMIT"> </td>
             </tr>
             <tr>
-              <th><a href="{% url 'adminview' %}" class="btn btn-outline">BACK</a></th>
+              <th></th>
             </tr>
               </form>
         </table>

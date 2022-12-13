@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link rel="stylesheet" typ="text/css" href="{% static 'css\adminD.css' %}">
-    
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\adminE.css' %}">
+    <link rel="shortcut icon" href="{% static "images/logo.png" %}" type="image/x-icon"> 
     <title>Admin View</title>
 </head>
 <body>
@@ -16,14 +16,17 @@
     
            
    
-    <div class="container">
-        <div class="header">
-            <div class="logo"><h1>McQueen's <span>Rentals</span></h1></a></div>
-            <div class="logout">
+    <div class="container ">
+        <div class="header  flex ">
+            <div class="logo container2 ">
+                <h1>McQueen's <span>Rentals</span>
+                </h1>
+            </div>
+            <div class="logout ">
                 <nav>
                     <h3><a href="{% url 'logout' %}">LOG OUT</a></h3>
                 </nav>
-                
+            
             </div>
         </div>
        <div class="tablecrud">
@@ -34,7 +37,10 @@
                     <th>Customer Name</th> 
                     <th>Car</th>
                     <th>Booking Info </th>
-                    <th></th>
+                    <th>
+                        
+                    </th>
+                    
                 </tr>
                 {% for car1 in car %}
                 {% for name in customer %}
@@ -52,9 +58,15 @@
                     {% endfor %}
                     {% endfor %}
                     {% endfor %}
+                    
             </table>
         </div>
        </div>
+
+    
     </div>
+
+    </div>
+ 
 </body>
 </html>

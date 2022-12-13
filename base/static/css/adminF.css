@@ -26,7 +26,7 @@ h1, h2{
 }
 
 h3{
-    color:white;
+    color:rgb(5, 5, 5);
 }
 
 
@@ -176,23 +176,23 @@ td {
   }  
 
 @media screen and (max-width: 1050px) {
-    .container {
+    .side-menu li {
         font-size: 18px;
     }
 }
 
-@media screen and (max-width: 735px) {
-    .container li span {
+@media screen and (max-width: 940px) {
+    .sidemenu li span {
         display: none;
     }
-    .container {
+    .sidemenu {
         align-items: center;
     }
-    .container li img {
+    .sidemenu li img {
         width: 40px;
         height: 40px;
     }
-    .container li:hover {
+    .sidemenu li:hover {
         background: #b5434f;
         padding: 8px 38px;
         border: 2px solid white;
