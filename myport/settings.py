@@ -133,4 +133,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://car-rental-system-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['car-rental-system-production.up.railway.app']
