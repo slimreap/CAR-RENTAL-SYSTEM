@@ -1,0 +1,132 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\adminA.css' %}">
+    
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\utilsB.css' %}">
+    <title>Admin View</title>
+</head>
+<body>
+  <div class="sidemenu">
+    <div class="brandmenu admin logoadmin">
+      <b><h2>McQueen's</h2></b>
+  </div>
+  <div class="nav">
+      <br><br><br><br><br>
+      <div class="img-case brandmenu">
+          <p>
+          <a href="">
+          <img src="{% static "images/logo.png" %}" width="100px" height="100px" alt="">
+          </a>
+      </p>
+      </div>
+      <br><br><br><br>
+      <h3><div class="user  admin"><b>ADMIN</b>
+      </div>
+  </div>
+  <br> <br> <br> <br> <br> <br> <br> 
+<div class="brandmenu  admin">
+  <h3><a href="{% url 'logout' %}">LOG OUT</a></h3>
+</div>
+</div>
+<div class="container">
+  <div class="header">
+          <div class="user">
+             <h1>ADMIN PANEL</h1>
+          </div>
+  </div>
+  <br><br><br><br>
+  <div class="tablecrud">
+    <div class="crud">
+      <table>
+    
+    <form action="" method="POST">
+
+    {% csrf_token %} 
+    <tr>
+      <th><label for="name">Name</label></th>
+    <td><input type="text" value = "{{customer.Name}}" id = "name" name="Name"/></td>
+    </tr>
+
+    <tr>
+    <th><label for="age">Age</label></th>
+    <td><input type="text" value = "{{customer.Age}}" id = "age" name="Age"/></td>
+    </tr> 
+
+    <tr>
+    <th><label for = "address">Address</label></th>
+    <td><input type = "text" value = "{{customer.Address}}" id = "address" name = "Address"/></td>
+    </tr> 
+
+    <tr>
+    <th><label for = "email">Email</label></th>
+    <td><input type = "text" value = "{{customer.email}}"id = "email" name = "Email"/></td> 
+    </tr>
+
+    <tr> 
+    <th><label for = "contact_number">Contact number</label></th>
+    <td><input type = "text" value = "{{customer.Contact_Number}}" id = "contact_number" name = "Contact_Number"/></td>
+    </tr>
+
+    <tr>
+    <th><label for = "license_number">License number</label></th>
+    <td><input type = "text" value = "{{customer.License_Number}}"id = "license_number" name = "License_Number"/></td>
+    </tr>
+
+    <tr>
+    <th><label for="caruserid">Car</label></th>
+    <td><select name="car_user_id" id="caruserid">
+        {% for mycar in car %}
+        <option value="{{mycar.id}}">{{mycar.Mod_Name}}</option>
+        {% endfor %}
+    </select></td>
+  </tr>
+
+    <br>
+
+    <tr>
+    <th><label for = "customer">Gender</label></th>
+          <td><input type="radio" value = "{{customer.gender}}" name="gender" id="dot-1" value="male">
+          <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <input type="radio" value = "{{customer.gender}}" name="gender" id="dot-2" value="female">
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <input type="radio" value = "{{customer.gender}}" name="gender" id="dot-3" value="Others">
+          <label for="dot-2">
+            <span class="dot three"></span>
+            <span class="gender">Others</span>
+          </label></td>
+          </tr>
+              <tr>
+                    <th><label for = "pick_up">Pick Up</label></th>
+              <td><input type = "date" value = "{{booking.Pick_Up}}" id = "pick_up" name = "Pick_Up"></td>
+              </tr>
+
+              <tr>
+              <th><label for = "drop_off">Drop_Off</label></th>
+              <td><input type = "date" value = "{{booking.Drop_Off}}" id = "drop_off" name = "Drop_Off"></td>
+              </tr>
+              <tr>
+              <td><input type="submit" class="btn btn-outline" value="SUBMIT"> </td>
+            </tr>
+            <tr>
+              <th><a href="{% url 'adminview' %}" class="btn btn-outline">BACK</a></th>
+            </tr>
+              </form>
+        </table>
+          </div>
+        </div>
+</div>
+</body>
+</html>

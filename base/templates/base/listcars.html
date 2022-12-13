@@ -1,0 +1,120 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\homeZ.css' %}">
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\utilsB.css' %}">
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\carlistD.css' %}">
+    <title>MQUEENS RENTALS</title>
+</head>
+
+<body>
+    <div class="navbar word-1">
+        <div class= "container flex">
+            <div class="logo"><h1>McQueen's <span>Rentals</span></h1></a></div>
+            <nav>
+                <ul>
+                    <div class="logo ">
+                        <li><a href="{% url 'home' %}"><span><b>HOME</b></span></a></li>
+                    </div>
+                        <li><a href="{% url 'listcars' %}"><b>BOOK</b></a></li>
+                        <li><a href="{% url 'about' %}"><b>ABOUT US</b></a></li>
+                </ul>
+            </nav>
+        </div>
+    
+    </div>
+
+<!--LISTCARS-->
+<section class="cars">
+    <div class="container ">
+            <a href="#" class="logo"><h1>LIST OF CARS:</h1></a>
+            <br>
+            <div class = "row ">
+                <div class = "col">
+                        <form  class = "" method="get">
+                            {{myFilter.form}}
+                        <button class = "btn btn-primary" type="submit">Search</button>
+                        </form>
+                        </div>
+                        </div>>
+            {% for cars in car %}
+            <div class="grid grid-3 border py-3">
+                <div class="text-center card">
+                <img src="{{cars.image.url}}" alt="toyota_logo" height="240px" width="10px">
+            </div>
+            <div class="py-2 logo card">
+                <details>
+                <summary>DETAILS</summary>
+                <p>
+                    <ul>Car Model: {{cars.Mod_Name}} </ul>
+                    <ul>Car Brand: {{cars.Brand_Name}}</ul>
+                    <ul>Price per day: {{cars.Price}}</ul>
+                    <ul>Description: {{cars.Desc}}</ul>
+                </p>
+                </details>
+                </div>
+                <div class="">
+                    {% if cars.status is None %}
+                <a href="{% url 'bookdetails' cars.id %}" class="btn btn-outline"> BOOK HERE </a> 
+                <div class="avail text-center text-align ">
+                    <h3>Available</h3>
+                    </div> 
+               
+                {% else %}
+                <a href="" class="btn btn-outline"> BOOK HERE </a> 
+                <div class="availB text-center text-align ">
+                    <h3>Unavailable</h3>
+                    </div> 
+                {% endif %}
+
+               </div>
+            </div>
+
+        {% endfor %}
+
+    </div>
+ </section>
+
+
+
+<!--FOOTER-->
+<footer class="footer bg-dark py-2">
+    <div class=" flex grid grid-3">
+        <div>
+            <div class="footerlogo"><h1><span><b>McQUEEN'S </span>RENTALS</b></h1></div>
+            </h1>
+            <h5>
+            <b><a href="#">Privacy Policy</a></b>
+            <b><p>Copyright &copy; 2020</p></b>
+            <p>CONTACT US:09457696432</p>
+            </h5>
+        </div>
+        <div class=" text-align container">
+        <nav>
+            <span>
+                <b>
+            <ul>
+                <h4>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Book Here</a></li>
+                </h4>
+            </b>
+            </ul>
+        </span>
+        </nav>
+    </div>
+        <div class="social">
+            <h4>FOLLOW US:</h4>
+            <a href="https://www.youtube.com/channel/UCIoMJNBYjEWEWMpMYRPP_mQ"><i class="fab fa-youtube fa-2x"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100087964113848"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://www.instagram.com/mcqueenscarrental/"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="https://twitter.com/mcqueens420"><i class="fab fa-twitter fa-2x"></i></a>
+        </div>
+    </div>
+</footer>

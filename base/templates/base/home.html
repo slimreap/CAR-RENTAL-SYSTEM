@@ -1,0 +1,171 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\homeC.css' %}">
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\utilsA.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+    <link href='https://fonts.google.com/specimen/Solway?query=solway' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="data:,">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+    <title>MQUEENS RENTALS</title>
+</head>
+
+<body>
+    <div class="navbar word-1">
+        <div class= "container flex">
+            <div class="logo"><h1>McQueen's <span>Rentals</span></h1></a></div>
+            <nav>
+                <ul>
+                    <div class="logo ">
+                        <li><a href="#"><span><b>HOME</b></span></a></li>
+                    </div>
+                        <li><a href="{% url 'listcars' %}"><b>BOOK</b></a></li>
+                        <li><a href="{% url 'about' %}"><b>ABOUT US</b></a></li>
+                </ul>
+            </nav>
+        </div>
+    
+    </div>
+
+    <section id="car1">
+        <section class="car">
+        <div class="car grid">
+            <div class="car-text">
+                <h1>COMPANY OFFERS:</h1>
+                <div class="word">
+            <p>
+                We offer long and short-term car rental deals for private
+                Customers, with or without drivers with unlimited mileage
+                all over the Mindanao area. We also provide car delivery
+                and car pick up all the way to the customer's house.</p>
+                <a href="{% url 'listcars' %}" class="btn btn-outline"> BOOK HERE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+    <!--list cars-->
+    <section class="cars">
+        <div class="container">
+                <a href="#" class=" text-center"><b><h1>FAVOURED CARS:</h1></b></a>
+            <div class="grid grid-3 text-center my-3 container">
+               <div class="card">
+                <a href="{% url 'listcars' %}">
+                <img src="{% static "images/vehicle-1.png" %}" alt="toyota_logo" width="10px" height="240px">
+                </a>
+            </div>
+            
+               <div class="card">
+                <a href="{% url 'listcars' %}"> 
+                <img src="{% static "images/vehicle-2.png" %}" alt="toyota_logo" width="10px" height="240px">
+                </a>
+             </div>
+
+               <div class="card">
+                <a href="{% url 'listcars' %}">
+                <img src="{% static "images/vehicle-3.png" %}" width="10px" height="240px">
+                </a>
+            </div>
+        
+               <div class="card">
+                <a href="{% url 'listcars' %}">
+                <img src="{% static "images/vehicle-4.png" %}" width="10px" height="240px">
+                </a>
+            </div>
+
+               <div class="card">
+                <a href="{% url 'listcars' %}">
+                <img src="{% static "images/vehicle-5.png" %}" width="10px" height="240px">
+                </a>
+            </div>
+
+               <div class="card">
+                <a href="{% url 'listcars' %}">
+                <img src="{% static "images/vehicle-6.png" %}" width="20px" height="200px">
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="{% url 'listcars' %}">
+                <img src="{% static "images/car-1.png" %}" width="20px" height="200px">
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="{% url 'listcars' %}">
+                <img src="{% static "images/car-2.png" %}" width="20px" height="200px">
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="{% url 'listcars' %}">
+                <img src="{% static "images/car-3.png" %}" width="20px" height="200px">
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="{% url 'listcars' %}">
+                <img src="{% static "images/car-4.png" %}" width="20px" height="200px">
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="{% url 'listcars' %}">
+                <img src="{% static "images/car-5.png" %}" width="20px" height="200px">
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="{% url 'listcars' %}">
+                <img src="{% static "images/car-6.png" %}" width="20px" height="200px">
+                </a>
+            </div>
+            </div>      
+            </section>
+        </div>
+    </section>
+<!--FOOTER-->
+    <footer class="footer bg-dark py-2">
+        <div class=" flex grid grid-3">
+            <div>
+                <div class="footerlogo"><h1><span><b>McQUEEN'S </span>RENTALS</b></h1></div>
+                </h1>
+                <h5>
+                <b><a href="#">Privacy Policy</a></b>
+                <b><p>Copyright &copy; 2020</p></b>
+                <p>CONTACT US:09457696432</p>
+                </h5>
+            </div>
+            <div class=" text-align container">
+            <nav>
+                <span>
+                    <b>
+                <ul>
+                    <h4>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="{% url 'listcars' %}">Book Here</a></li>
+                    </h4>
+                </b>
+                </ul>
+            </span>
+            </nav>
+        </div>
+            <div class="social">
+                <h4>FOLLOW US:</h4>
+                <a href="https://www.youtube.com/channel/UCIoMJNBYjEWEWMpMYRPP_mQ"><i class="fab fa-youtube fa-2x"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100087964113848"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://www.instagram.com/mcqueenscarrental/"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://twitter.com/mcqueens420"><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

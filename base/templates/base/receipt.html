@@ -1,0 +1,201 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'><link rel="stylesheet" typ="text/css" href="{% static 'css\receiptA.css' %}">
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\formE.css' %}">
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\homeC.css' %}">
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\modalB.css' %}">
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\utilsA.css' %}">
+    <title>BOOKOUT SUMMARY</title>
+</head>
+<body> 
+    <div class="row">
+    <div class= "container flex">
+        <div class="logo"><h1>McQueen's <span>Rentals</span></h1></a></div>
+    </div>
+
+
+  <!--LEFT SIDE RECEIPT-->
+      <div class="column">
+        <div class="card">
+          <h4>Customer Information Summary</h4>
+          <form action="#">
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Name:</span>
+                {% for car1 in car %}
+                {% for customers in car1.cars.all %}
+                {% if customer.car_user_id == car1.id %}
+                <input type="text" name = "Name" value="{% if customer.car_user_id == car1.id %}{{customers.Name}}{% endif %}" placeholder="" readonly>
+              </div>
+            </div>
+
+            <div class="user-details">
+                <div class="input-box">
+                  <span class="details">Address:</span>
+                  <input type="text" value = "{% if customer.car_user_id == car1.id %}{{customers.Address}}{% endif %}"name = "Address" placeholder="" readonly>
+                </div>
+              </div>
+
+              <div class="user-details">
+                <div class="input-box">
+                  <span class="details">Email Address:</span>
+                  <input type="text" value="{% if customer.car_user_id == car1.id %}{{customers.email}}{% endif %}" name = "email" placeholder="" readonly>
+                </div>
+              </div>
+
+              <div class="user-details">
+                <div class="input-box">
+                  <span class="details">Contact Number:</span>
+                  <input type="text" value="{% if customer.car_user_id == car1.id %}{{customers.Contact_Number}}{% endif %}" name = "Contact_Number" placeholder="" readonly>
+                </div>
+              </div>
+
+              <div class="user-details">
+                <div class="input-box">
+                  <span class="details">Driver's License No:</span>
+                  <input type="text" value="{% if customer.car_user_id == car1.id %}{{customers.License_Number}}{% endif %}" name = "License_Number" placeholder="" readonly>
+                </div>
+              </div>
+        </div>
+      </div>
+   
+      <!--RIGHT SIDE RECEIPT-->
+      <div class="column1">
+
+        <div class="card">
+          <h3>Booking Summary </h3>
+          <img src="{% if customers.car_user_id == car1.id %} {{car1.image.url}} {% endif %} " class="carpicture" alt="carpic" width="90px" height="90px"> 
+          <div class="carname">
+              <input type="text" value = "{% if customer.car_user_id == car1.id %}{{car1.Mod_Name}}{% endif %}" readonly>
+          </div>
+          <br/><br><br/><br>
+          <hr class="dashed">
+   
+          <div class="input-box">
+            <span class="spent">Price</span>
+            <input type="number" placeholder="" value = "{% if customer.car_user_id == car1.id %}{{car1.Price}}{% endif %}">
+          </div>
+      
+          <div class="input-box">
+            <span class="spent">Total</span>
+            <input type="number" placeholder="" value = "{% if customer.car_user_id == car1.id %}{{car1.Price}}{% endif %}">
+          </div>
+          <br/>
+          <hr class="dashed">
+          <div class="input-box">
+            <span class="time"><h4>PICK UP TIME:</h4></span>
+            <input type="text" placeholder="" value = "{{custom_booking.Pick_Up}}">
+          </div>
+          <div class="input-box">
+            <span class="time"><h4>DROP OFF TIME:</h4></span>
+            <input type="text" placeholder="" value = "{{custom_booking.Drop_Off}}">
+          </div>
+          
+        </div>
+       
+        
+
+        {% endif %}
+        
+        {% endfor %} 
+       
+        {% endfor %} 
+       
+        <footer>
+          <button id="modal-btn" class="button">BOOKOUT</button>
+    
+    
+      <div id="my-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <div class= "container flex">
+              <div class="logo"><h1>McQueen's <span>Rentals</span></h1></a></div>
+          </div>      
+          </div>
+          <div class="modal-body">
+            <b><p>Thank you for booking in McQueen's Rentals. Kindly present this to the registrar to be informed about any other details.</p></b>
+            <BR>
+              <ul>
+              <li><i class="fa-solid fa-phone"></i> (+63) 945-769-6432</li>
+              <li><i class="fa-solid fa-location-pin"></i> EAAB, Gov. Ramos Ave., Sta. Maria, Zamboanga City</li>
+              <li><i class="fa-solid fa-envelope"></i> mcqueens@gmail.com</li>
+
+              </ul>
+          </div>
+          <div class="modal-footer grid  text-center text-align">
+            <div class="return text-align">
+                <nav>
+                    <span>
+                        <b>
+                    
+                        <h4>
+                        <a href="{% url 'home' %}">Home |</a> 
+                        <a href="{% url 'listcars' %}">Book Here |</a>
+                        <a href="{% url 'about' %}">About Us</a>
+                        </h4>
+                    </b>
+                    
+                </span>
+                </nav>
+            </div>
+            <div class="social text-center text-align">
+              <h4>FOLLOW US:</h4>
+              <a href="https://www.youtube.com/channel/UCIoMJNBYjEWEWMpMYRPP_mQ"><i class="fab fa-youtube fa-2x"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=100087964113848"><i class="fab fa-facebook fa-2x"></i></a>
+              <a href="https://www.instagram.com/mcqueenscarrental/"><i class="fab fa-instagram fa-2x"></i></a>
+              <a href="https://twitter.com/mcqueens420"><i class="fab fa-twitter fa-2x"></i></a>
+          </div>
+          </div>
+        </div>
+      </div>
+    
+      </footer>
+      </div>
+      
+    </div>
+    
+  
+    
+    
+</body>
+<script>
+// Get DOM Elements
+const modal = document.querySelector('#my-modal');
+const modalBtn = document.querySelector('#modal-btn');
+const closeBtn = document.querySelector('.close');
+
+// Events
+modalBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', outsideClick);
+
+// Open
+function openModal() {
+  modal.style.display = 'block';
+}
+
+// Close
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+// Close If Outside Click
+function outsideClick(e) {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
+}
+</script>
+
+</html>

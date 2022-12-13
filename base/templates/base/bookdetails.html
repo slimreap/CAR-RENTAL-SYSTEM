@@ -1,0 +1,98 @@
+{%load static%}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\carlist.css' %}">
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\utils.css' %}">
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\booking.css' %}">
+    <link rel="stylesheet" typ="text/css" href="{% static 'css\formB.css' %}">
+    
+    <title>MQUEENS RENTALS</title>
+
+   </head>
+
+<body>
+  <div class="container">
+    <div class="title">Booking Details</div>
+    <div class="content">
+      <form method="POST">
+        {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" name="Name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Age</span>
+            <input type="number" name="Age" placeholder="Enter your age" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" name="Address" placeholder="Block/Barangay/City" required>
+          </div>
+         
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" name="email" placeholder="mcqueens@gmail.com" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="number" name="Contact_Number" placeholder="+63 000 000 0000" required>
+          </div>
+          <div class="input-box">
+            <span class="details">License Number</span>
+            <input type="text" name="License_Number"  placeholder="000-000-0000" required>
+          </div>
+        </div>   
+        <div class="title">Car Booking Dates</div>
+                      <div class="user-details">
+                          <div class="input-box">
+                              <label>PICK UP DATE</label>
+                              <input type="date" name="Pick_Up" placeholder="Enter date" required>
+                          </div>
+                          <div class="input-box">
+                              <label>DROP OFF DATE</label>
+                              <input type="date" name="Drop_Off" placeholder="Enter date" required>
+                          </div> 
+                        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1" value="male">
+          <input type="radio" name="gender" id="dot-2" value="female">
+          <input type="radio" name="gender" id="dot-3" value="Others">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Others</span>
+            </label>
+          </div>
+      <div class="button-checkout">
+        <input type="submit" value="Checkout">
+      </form>
+        </a>
+      </div>
+      <div class="button-save">
+        <a href="{% url 'listcars' %}">
+        <input type="button" value="Change Your Car">
+    </a>
+    </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
