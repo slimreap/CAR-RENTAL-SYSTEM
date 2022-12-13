@@ -1,0 +1,13 @@
+:root {
+  --primary-color: #4d4b4bb5;
+  --secondary-color: #1c3fa8;
+  --dark-color: hsl(208, 100%, 13%);
+  --light-color: #f4f4f4;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
+}
+
+.cars{
+  background-color: rgb(85, 81, 81);
+}
+

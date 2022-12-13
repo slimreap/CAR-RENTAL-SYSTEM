@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+:root {
+    --primary-color: #4d4b4bb5;
+    --secondary-color: #1c3fa8;
+    --dark-color: hsl(208, 100%, 13%);
+    --light-color: #ffffff;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+  }
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+  }
+  
+.logo {
+  color: rgb(0, 0, 0);
+}
+.logo span{
+    color: #ae0ee8;
+
+}
+body {
+  
+    font-family: 'argent-cf', serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.6;
+    position:relative;
+    background-size: auto;
+    background-position: top;
+    flex-wrap:wrap;
+  }
+  
+ul {
+    list-style-type: none;
+  }
+  
+a {
+    text-decoration: none;
+    color: rgb(45, 40, 40);
+  }
+  
+h1,h2 {
+    font-weight: normal;
+    line-height: .9;
+    margin: 10px 0;
+  }
+  
+p {
+    margin: 10px 0;
+  }
+  
+img {
+    width: 50%;
+    height: 50%;
+  }
+.xl{
+  font-size: 4rem;
+}
+.word{
+    font-family: 'varela round', serif;
+    text-align: justify;
+}
+
+.word-1{
+    font-family: 'solway', serif;
+}
+
+/*navbar*/
+.navbar {
+  background-color:var(--primary-color);
+  color: rgb(156, 8, 179);
+  height: 70px;
+}
+.navbar {
+  background-color: rgb(255, 253, 253);
+  color: rgb(133, 6, 145);
+  height: 70px;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar a {
+  color: rgb(1, 1, 1);
+  padding: 10px;
+  margin: 0 5px;
+}
+
+.navbar a:hover {
+  border-bottom: 2px rgb(175, 15, 244) solid;
+}
+
+.navbar .flex {
+  justify-content: space-between;
+}
+/* car-display*/
+#car1{
+    background-image: url('../images/image.png');
+    background-position: center;
+    height: 700px;
+    margin-bottom: 30px;
+  }
+
+.car{
+    height: 400px;
+}
+
+.car h1{
+    font-size: 40px;
+}
+
+.car p{
+    margin:20px 0;
+}
+
+/*margin */
+.my-1 {
+    margin: 1rem 0;
+}
+
+.my-2 {
+    margin: 1.5rem 0;
+}
+.my-3 {
+    margin: 2rem 0;
+}
+
+.my-4 {
+    margin: 3rem 0;
+}
+
+
+.m-1 {
+    margin: 1rem;
+}
+
+
+/*padding*/
+
+.py-1 {
+    padding: 1rem 0;
+}
+
+.py-2 {
+    padding: 1.5rem 0;
+}
+.py-3 {
+    padding: 2rem 0;
+}
+
+.py-4 {
+    padding: 3rem 0;
+}
+.py-5 {
+    padding: 4rem 0;
+}
+
+/*list cars*/
+ 
+
+.cars .car{
+    text-align: center;
+    height: auto;
+    padding-bottom: 20px;
+    margin:18px 10px 40px ;
+    transition: transform 0.2s ease-in;
+}
+
+.cars .card h4{
+    font-size:20px;
+    margin: bottom 50px;
+}
+
+.cars .card:hover{
+    transform:translateY(-15px);
+}
+
+/*FOOTER*/
+.footer{
+  height: 50%;
+  background: rgb(97, 87, 87);
+}
+.footer .social a {
+    margin: 0 10px;
+    flex-wrap:wrap;
+  }
+  
+  .fa-youtube:hover {
+    color: #a31717;
+  }
+  
+  .fa-facebook:hover {
+    color: #1773EA;
+  }
+  
+  .fa-instagram:hover {
+    color: #B32E87;
+  }
+  
+  .fa-twitter:hover {
+    color: #1C9CEA;
+  }
+  .container {
+	  max-width: 1170px;
+	  margin:auto;
+    color: rgb(254, 250, 250);
+    flex-wrap:wrap;
+}
+  .social a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	transition: all 0.5s ease;
+  flex-wrap:wrap;
+  
+}
+  .social a:hover{
+	color: #030202;
+	background-color: transparent;
+}
+
+.footerlogo{
+  flex-wrap:wrap;
+}
+.footerlogo span{
+  color: #040404;
+  
+}
+
+.col{
+  color: #030202;
+  text-align: justify;
+}
+/*tables and under*/
+@media (max-width:768px) {
+  .grid,
+  .logo .grid
+  .navbar .grid,
+  .car1 .grid,
+  .car .grid,
+  .cars .grid,
+  .container .grid,
+  .footer .grid
+  .social .grid
+  .footerlogo .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+
+/* Mobile */
+
+@media(max-width:500px){
+  .navbar{
+    height: 130px;
+  }
+}
+
+.navbar .flex{
+  flex-direction: column;
+}
+
+.navbar ul{
+  padding: 10px;
+  background-color: rgba(58, 57, 57, 0.1);
+}
+
+.showcase-form {
+  width: 300px;
+}
+}
